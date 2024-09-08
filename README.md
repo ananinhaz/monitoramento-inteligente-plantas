@@ -13,12 +13,22 @@ O projeto visa resolver a dificuldade de gerenciar cuidados com plantas, especia
 - Ajuste da intensidade da luz
 - Notificações e alertas para o usuário
 
+## Requisitos Não Funcionais
+- Interface de usuário intuitiva e fácil de usar.
+- Processamento rápido dos dados para garantir respostas em tempo real.
+
 ## Componentes
 
 - **ESP32**: Microcontrolador central
 - **Sensores de Umidade do Solo**: Medem a umidade do solo
 - **Sensores de Temperatura e Umidade**: Monitoram a temperatura e umidade ao redor das plantas
 - **Sensores de Luz**: Avaliam a intensidade da luz
+
+## Arquitetura do Sistema
+1. **Sensores IoT** capturam os dados ambientais.
+2. **ESP32** processa os dados e envia para a nuvem ou servidor local.
+3. **Algoritmos de IA** analisam as condições e decidem as ações corretivas.
+4. **Notificações** são enviadas ao usuário via interface web.
 
 ## Fluxo de Dados
 
