@@ -25,18 +25,18 @@ O projeto visa resolver a dificuldade de gerenciar cuidados com plantas, especia
 - **Sensores de Luz**: Avaliam a intensidade da luz
 
 ## Arquitetura do Sistema
-1. **Sensores IoT** capturam os dados ambientais.
-2. **ESP32** processa os dados e envia para a nuvem ou servidor local.
-3. **Algoritmos de IA** analisam as condições e decidem as ações corretivas.
-4. **Notificações** são enviadas ao usuário via interface web.
+- **Sensores IoT** capturam os dados ambientais.
+- **ESP32** processa os dados e envia para a nuvem ou servidor local.
+- **Algoritmos de IA** analisam as condições e decidem as ações corretivas.
+- **Notificações** são enviadas ao usuário via interface web.
 
 ## Fluxo de Dados
 
-1. **Captura de Dados**: Sensores medem a umidade, temperatura e luz.
-2. **Transmissão de Dados**: Dados são enviados ao ESP32.
-3. **Processamento e Análise**: Dados são processados e analisados.
-4. **Ação**: Ajustes são feitos com base nas análises.
-5. **Feedback ao Usuário**: Notificações e atualizações são enviadas ao usuário.
+- **Captura de Dados**: Sensores medem a umidade, temperatura e luz.
+- **Transmissão de Dados**: Dados são enviados ao ESP32.
+- **Processamento e Análise**: Dados são processados e analisados.
+- **Ação**: Ajustes são feitos com base nas análises.
+- **Feedback ao Usuário**: Notificações e atualizações são enviadas ao usuário.
 
 ## Benefícios
 
