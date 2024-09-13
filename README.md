@@ -28,7 +28,8 @@ O projeto visa resolver a dificuldade de gerenciar cuidados com plantas, especia
 - **Sensores IoT** capturam os dados ambientais.
 - **ESP32** processa os dados e envia para a nuvem ou servidor local.
 - **Algoritmos de IA** analisam as condições e decidem as ações corretivas.
-- **Notificações** são enviadas ao usuário via interface web.
+- **Notificações** são enviadas ao usuário.
+- **Interface Web** para usuário receber o feedback do estados das plantas, histórico de alertas e dashboards.
 
 ## Fluxo de Dados
 
