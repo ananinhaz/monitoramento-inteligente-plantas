@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitoramento de Plantas</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    async function fetchSensorData() {
+      try {
+        // Faz a requisição ao backend
+        const response = await fetch("http://localhost:3000/sensor");
+
+        if (!response.ok) {
+          throw new Error("Erro ao buscar os dados do servidor");
+        }
+
+        const data = await response.json();
+
+        // Atualiza o valor da umidade do solo
+        const moistureElement = document.getElementById("moisture");
+        moistureElement.textContent = `Umidade do solo: ${data.soilMoisture}%`;
+
+        // Atualiza o estado da umidade com texto, emojis e cores
+        const stateText = {
+          low: "Baixa umidade 🌵",
+          high: "Alta umidade 💦",
+          normal: "Normal 🌱",
+        };
+
+        const stateElement = document.getElementById("state");
+        stateElement.textContent = `Estado da umidade: ${stateText[data.moistureState] || "Desconhecido"}`;
+
+        // Remove classes antigas e adiciona a nova classe de estado
+        stateElement.className = ""; // Remove todas as classes existentes
+        if (data.moistureState) {
+          stateElement.classList.add("state", data.moistureState); // Adiciona a classe base e o estado
+        }
+
+        // Atualiza o timestamp
+        const timestampElement = document.getElementById("timestamp");
+        timestampElement.textContent = `Última atualização: ${new Date(data.timestamp).toLocaleString()}`;
+      } catch (error) {
+        console.error("Erro ao buscar os dados:", error);
+
+        // Atualiza os elementos com mensagens de erro
+        document.getElementById("moisture").textContent = "Erro ao obter dados";
+        document.getElementById("state").textContent = "Estado da umidade: Indisponível";
+        document.getElementById("timestamp").textContent = "Erro ao obter o horário";
+      }
+    }
+
+    // Chama a função inicialmente ao carregar a página
+    fetchSensorData();
+
+    // Configura o intervalo para atualizar os dados a cada 5 segundos
+    setInterval(fetchSensorData, 5000);
+  </script>
+</head>
+<body>
+  <h1>Monitoramento de Plantas</h1>
+  <div class="container">
+    <img id="plant" src="img/plant.png" alt="Planta fofa">
+    <p id="moisture" class="loading">Carregando...</p>
+    <p id="state" class="state">Estado da umidade: Carregando...</p>
+    <p id="timestamp"></p>
+  </div>
+</body>
+</html>

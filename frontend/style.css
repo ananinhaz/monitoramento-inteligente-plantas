@@ -1,0 +1,141 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Título */
+h1 {
+    font-size: 1.8rem;
+    color: #F5F5F5; /* Branco suave */
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 50px;
+    animation: fadeIn 1s ease-in-out; /* Animação suave ao carregar */
+}
+
+/* Corpo */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #4C453D; /* Fundo marrom escuro */
+    color: #FFF; /* Texto branco */
+    display: flex;
+    flex-direction: column; /* Empilha o título e o container */
+    align-items: center;
+    justify-content: flex-start; /* Começa a partir do topo */
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container principal */
+.container {
+    background-color: #6B6557; /* Fundo do card (tom de marrom suave) */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra mais marcante */
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px; /* Espaçamento entre o título e o container */
+    animation: fadeIn 1s ease-in-out; /* Animação suave ao carregar */
+}
+
+/* Imagem da planta */
+#plant {
+    width: 250px;
+    height: auto;
+    margin: 20px 0;
+    transition: transform 0.3s ease; /* Efeito de transição suave */
+}
+
+#plant:hover {
+    transform: scale(1.05); /* Leve aumento no hover */
+}
+
+/* Estilo do texto de umidade do solo */
+#moisture {
+    font-size: 1.5rem;
+    color: #D4EDB3; /* Verde claro */
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra suave no texto */
+}
+
+/* Estilo da última atualização */
+#timestamp {
+    font-size: 0.9rem;
+    color: #CCC; /* Cinza claro */
+    margin-top: 10px;
+}
+/* Estilo do estado da umidade */
+.state {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    transition: color 0.3s ease; /* Transição suave nas cores */
+}
+
+/* Cores específicas dos estados */
+.state.low {
+    color: #FF6347; /* Vermelho suave para baixa umidade */
+}
+
+.state.normal {
+    color: #32CD32; /* Verde para umidade normal */
+}
+
+.state.high {
+    color: #1E90FF; /* Azul para alta umidade */
+}
+
+/* Animação de carregamento */
+.loading {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #FF9900; /* Laranja vibrante */
+    animation: pulse 1s infinite;
+}
+
+/* Animações */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #moisture {
+        font-size: 1.2rem;
+    }
+
+    #timestamp {
+        font-size: 0.8rem;
+    }
+}
